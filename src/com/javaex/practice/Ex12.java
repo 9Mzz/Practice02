@@ -19,24 +19,29 @@ public class Ex12 {
 		if (num2>0) {
 			switch(val1) {
 				case '+' : 
-				System.out.println("결과는 "+(num1+num2)+"입니다.");
+				value = num1+num2;
+				System.out.println("결과는 "+(value)+"입니다.");
 				break;
 
 				case '-' :
-				System.out.println("결과는 "+(num1-num2)+"입니다.");
+				value = num1-num2;
+				System.out.println("결과는 "+(value)+"입니다.");
 				break;
 
 				case '/' :
-					if (num2==0 ) {
+					if (num2==0 && num1==0) {
 						System.out.println("계산할 수 없습니다.");
+						break;
 					}
 					else {
-						System.out.println("결과는 "+(num1/num2)+"입니다.");
+						value = num1/num2;
+						System.out.println("결과는 "+(value)+"입니다.");
+						break;
 					}
-				break;
 				
 				case '*' :
-				System.out.println("결과는 "+(num1*num2)+"입니다.");
+					value = num1*num2;
+				System.out.println("결과는 "+(value)+"입니다.");
 				break;
 				default : 
 					System.out.println("계산할 수 없는 기호입니다.");

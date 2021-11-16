@@ -6,30 +6,42 @@ public class Ex14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("수익을 입력해 주세요."+"\t"+"(단위:\"만 원\")");
-		System.out.print("금익: ");
-		double earn = sc.nextDouble();
+		Scanner sc = new Scanner (System.in);
 		
-		if(earn<=1000 && earn>=0) {
-			System.out.println("소득세는 "+(earn*0.09)+" 입니다.");
-		}
-		else if(earn>1000 && earn<=4000) {
-			System.out.println("소득세는 "+((1000*0.09)+(0.18*(earn-1000))+" 입니다."));
-		}
-		else if(earn>4000 && earn<8000) {
-			System.out.println("소득세는 "+((1000*0.09)+(3000*0.18)+(0.27*(earn-4000)))+" 입니다.");
-		}
-		else if(earn>8000) {
-			System.out.println("소득세는 "+((1000*0.09)+(3000*0.18)+(0.27*4000)+(0.36*(earn-8000)))+" 입니다.");
-		}
-		else {
-			System.out.println("잘못 입력했습니다.");
-		}
+		System.out.println("수익을 입력해주세요");
+		
+		System.out.print("금익: ");
+		int money = sc.nextInt();
+		
+		double tax = 0.09*money;
+	    double tax2 = (1000*0.09) + (0.18*(money-1000));
+	    double tax3 = (1000*0.09) + (3000*0.18)+ (0.27*(money-4000));
+	    double tax4 = (1000*0.09) + (3000*0.18) +(4000*0.27) + (0.36*(money-8000));
+	    
+	    if (money>0&&money<=1000) {
+	    	System.out.println("소득세는 "+tax+" 입니다.");
+	    }
+	    
+	    else if (money>1000&&money<=4000) {
+	    	System.out.println("소득세는 "+tax2+" 입니다.");
+	    }
+	    
+	    else if (money>4000&&money<8000) {
+	    	System.out.println("소득세는 "+tax3+" 입니다.");
+	    }
+				
+	    else if (money>8000) {
+	    	System.out.println("소득세는 "+tax4+" 입니다.");
+	    }	
+	    
+	    else {
+	    	System.out.println("잘못 입력했습니다.");
+	    }
+		
+		
 		
 		sc.close();
-		
+
 	}
 
 }
